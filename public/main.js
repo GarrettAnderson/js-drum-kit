@@ -1,7 +1,5 @@
-const main = () => {
-  if (document.querySelector('h1.hello-world')) {
-    document.querySelector('h1.hello-world').textContent = 'Hello, World!'
-  }
-}
-
-document.addEventListener('DOMContentLoaded', main)
+window.addEventListener('keydown', function(event) {
+  const audio = document.querySelector(`audio[data-key="${event.keyCode}"]`)
+  console.log(audio)
+  if (!audio) return //stop the function from running all together
+})
