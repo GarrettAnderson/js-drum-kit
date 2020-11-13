@@ -2,59 +2,91 @@
 
 // user is able to click on letter keyboard button to play a sound
 
-let dataAttributeValue;
+let dataAttributeValue = [];
 let audioDataAttributeValue;
 let audioFile;
+
 
 function keyPressed(event) {
   // console.log('testing')
   console.log(event)
-  console.log(dataAttributeValue)
-  console.log(audioDataAttributeValue)
-  console.log(audioFile)
+  console.log(event.keyCode)
+  // console.log(dataAttributeValue)
+  // console.log(audioDataAttributeValue)
+  // console.log(audioFile)
+
+  audioDataKeys.forEach (
+    function (audio) {
+      console.log(audio)
+
+      // Retrive the data-key values from the audio elements and assign to variable
+      let audioDataKeyValue = audio.getAttribute('data-key')
+
+      console.log(audioDataKeyValue)
+
+      if (audioDataKeyValue = event.keyCode) {
+        console.log('testing')
+      }
+
+      // Assign data-key values of the audio elements and assign that value to a global variable
+      // audioDataAttributeValue = audioDataKeyValue
+
+      // Assign audio element to global variable to be used in keyPressed()
+      // audioFile = audioDataAttributeValue
+
+    }
+  )
 
   // If the data-key value of a letter elements is equal to the data-key value of the audio elements, play that specific audio file
 
-  if (dataAttributeValue = audioDataAttributeValue) {
-    console.log('play the audio file')
-    audioFile.play()
-  } else (
-    console.log('no audio file to play')
-  )
+//   if (event.keyCode == audioDataAttributeValue) {
+//     console.log('play the audio file')
+//     audioFile.play()
+//   } else {
+//     console.log('no audio file to play')
+//   }
 }
 
 let allKeys = document.querySelectorAll('.key')
 console.log(allKeys)
+
 
 // currentKey.addEventListener('click', keyPressed)
 
 let audioDataKeys = document.querySelectorAll('audio[data-key]')
 console.log(audioDataKeys)
 
-allKeys.forEach (
-  function (keyInAllKeys) {
 
-    document.addEventListener('keydown', keyPressed)
+// allKeys.forEach (
+//   function (keyInAllKeys) {
+//
+//       console.log(keyInAllKeys)
+//
+//     var dataKeyValue = keyInAllKeys.getAttribute('data-key')
+//
+//     dataAttributeValue = dataKeyValue
+//   }
+// )
 
-      console.log(keyInAllKeys)
 
-    var dataKeyValue = keyInAllKeys.getAttribute('data-key')
+// audioDataKeys.forEach (
+//   function (audio) {
+//     console.log(audio)
+//
+//     // Retrive the data-key values from the audio elements and assign to variable
+//     let audioDataKeyValue = audio.getAttribute('data-key')
+//
+//     console.log(audioDataKeyValue)
+//
+//     // Assign data-key values of the audio elements and assign that value to a global variable
+//     audioDataAttributeValue = audioDataKeyValue
+//
+//     // Assign audio element to global variable to be used in keyPressed()
+//     audioFile = audioDataAttributeValue
+//   }
+// )
 
-    dataAttributeValue = dataKeyValue
-  }
-)
-
-audioDataKeys.forEach (
-  function (audio) {
-    console.log(audio)
-
-    var audioDataKeyValue = audio.getAttribute('data-key')
-
-    audioDataAttributeValue = audioDataKeyValue
-    audioFile = audio
-  }
-)
-
+document.addEventListener('keydown', keyPressed, true)
 
 
 
