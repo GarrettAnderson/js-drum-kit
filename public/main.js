@@ -6,6 +6,12 @@ let dataAttributeValue = [];
 let audioDataAttributeValue;
 let audioFile;
 
+let allKeys = document.querySelectorAll('.key')
+console.log(allKeys)
+
+let audioDataKeys = document.querySelectorAll('audio[data-key]')
+console.log(audioDataKeys)
+
 
 function keyPressed(event) {
   // console.log('testing')
@@ -15,7 +21,7 @@ function keyPressed(event) {
   // console.log(audioDataAttributeValue)
   // console.log(audioFile)
 
-    for (var i = 0; i < audioDataKeys.length; i++) {
+  for (var i = 0; i < audioDataKeys.length; i++) {
 
       console.log(audioDataKeys[i])
       let audio = audioDataKeys[i]
@@ -33,64 +39,7 @@ function keyPressed(event) {
         console.log('non special key')
       }
     }
-
-
-      // Assign data-key values of the audio elements and assign that value to a global variable
-      // audioDataAttributeValue = audioDataKeyValue
-
-      // Assign audio element to global variable to be used in keyPressed()
-      // audioFile = audioDataAttributeValue
-
-
-
-  // If the data-key value of a letter elements is equal to the data-key value of the audio elements, play that specific audio file
-
-//   if (event.keyCode == audioDataAttributeValue) {
-//     console.log('play the audio file')
-//     audioFile.play()
-//   } else {
-//     console.log('no audio file to play')
-//   }
-}
-
-let allKeys = document.querySelectorAll('.key')
-console.log(allKeys)
-
-
-// currentKey.addEventListener('click', keyPressed)
-
-let audioDataKeys = document.querySelectorAll('audio[data-key]')
-console.log(audioDataKeys)
-
-
-// allKeys.forEach (
-//   function (keyInAllKeys) {
-//
-//       console.log(keyInAllKeys)
-//
-//     var dataKeyValue = keyInAllKeys.getAttribute('data-key')
-//
-//     dataAttributeValue = dataKeyValue
-//   }
-// )
-
-
-// audioDataKeys.forEach (
-//   function (audio) {
-//     console.log(audio)
-//
-//     // Retrive the data-key values from the audio elements and assign to variable
-//     let audioDataKeyValue = audio.getAttribute('data-key')
-//
-//     console.log(audioDataKeyValue)
-//
-//     // Assign data-key values of the audio elements and assign that value to a global variable
-//     audioDataAttributeValue = audioDataKeyValue
-//
-//     // Assign audio element to global variable to be used in keyPressed()
-//     audioFile = audioDataAttributeValue
-//   }
-// )
+  }
 
 document.addEventListener('keydown', keyPressed, true)
 
