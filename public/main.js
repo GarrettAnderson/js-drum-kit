@@ -14,31 +14,38 @@ console.log(audioDataKeys)
 
 
 function keyPressed(event) {
-  // console.log('testing')
   console.log(event)
   console.log(event.keyCode)
-  // console.log(dataAttributeValue)
-  // console.log(audioDataAttributeValue)
-  // console.log(audioFile)
 
   for (var i = 0; i < audioDataKeys.length; i++) {
 
       console.log(audioDataKeys[i])
       let audio = audioDataKeys[i]
 
-      //     console.log(audio)
       // Retrive the data-key values from the audio elements and assign to variable
       let audioDataKeyValue = parseInt(audio.getAttribute('data-key'))
-      //
+
       console.log(audioDataKeyValue, event.keyCode)
 
       if (audioDataKeyValue == event.keyCode) {
         console.log('special key pressed')
+
+        for (var i = 0; i < allKeys.length; i++) {
+          console.log(allKeys[i])
+
+  
+          let indivKey = document.querySelector('.key')
+          console.log(indivKey)
+          indivKey.classList.toggle('playing')
+        }
+
+
         audio.play()
       } else {
         console.log('non special key')
       }
     }
+
   }
 
 document.addEventListener('keydown', keyPressed, true)
