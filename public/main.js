@@ -15,18 +15,25 @@ function keyPressed(event) {
   // console.log(audioDataAttributeValue)
   // console.log(audioFile)
 
-  audioDataKeys.forEach (
-    function (audio) {
-      console.log(audio)
+    for (var i = 0; i < audioDataKeys.length; i++) {
 
+      console.log(audioDataKeys[i])
+      let audio = audioDataKeys[i]
+
+      //     console.log(audio)
       // Retrive the data-key values from the audio elements and assign to variable
-      let audioDataKeyValue = audio.getAttribute('data-key')
+      let audioDataKeyValue = parseInt(audio.getAttribute('data-key'))
+      //
+      console.log(audioDataKeyValue, event.keyCode)
 
-      console.log(audioDataKeyValue)
-
-      if (audioDataKeyValue = event.keyCode) {
-        console.log('testing')
+      if (audioDataKeyValue == event.keyCode) {
+        console.log('special key pressed')
+        audio.play()
+      } else {
+        console.log('non special key')
       }
+    }
+
 
       // Assign data-key values of the audio elements and assign that value to a global variable
       // audioDataAttributeValue = audioDataKeyValue
@@ -34,8 +41,7 @@ function keyPressed(event) {
       // Assign audio element to global variable to be used in keyPressed()
       // audioFile = audioDataAttributeValue
 
-    }
-  )
+
 
   // If the data-key value of a letter elements is equal to the data-key value of the audio elements, play that specific audio file
 
