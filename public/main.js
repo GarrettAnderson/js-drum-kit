@@ -17,6 +17,22 @@ function keyPressed(event) {
   console.log(event)
   console.log(event.keyCode)
 
+
+  for (var j = 0; j < allKeys.length; j++) {
+    console.log(event.keyCode, allKeys[j])
+
+      let keyDataValue = parseInt(allKeys[j].getAttribute('data-key'))
+
+      console.log(keyDataValue)
+
+      if (keyDataValue == event.keyCode) {
+        allKeys[j].classList.add('playing')
+      } else if (keyDataValue !== event.keyCode){
+        console.log('data key does not mach')
+        allKeys[j].classList.remove('playing')
+      }
+  }
+
   for (var i = 0; i < audioDataKeys.length; i++) {
 
       console.log(audioDataKeys[i])
@@ -29,17 +45,6 @@ function keyPressed(event) {
 
       if (audioDataKeyValue == event.keyCode) {
         console.log('special key pressed')
-
-        for (var i = 0; i < allKeys.length; i++) {
-          console.log(allKeys[i])
-
-  
-          let indivKey = document.querySelector('.key')
-          console.log(indivKey)
-          indivKey.classList.toggle('playing')
-        }
-
-
         audio.play()
       } else {
         console.log('non special key')
