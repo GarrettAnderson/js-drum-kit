@@ -56,36 +56,9 @@ function keyPressed(event) {
 document.addEventListener('keydown', keyPressed, true)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// ============================
-// ============================
+/* ========================
+   Wes Bos JS
+ ======================== */
 
 
 // function playSound(event) {
